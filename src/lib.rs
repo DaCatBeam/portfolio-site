@@ -3,6 +3,8 @@ use axum::{routing, Router, response::Html};
 use std::error::Error;
 use std::net::SocketAddr;
 
+pub mod templates;
+
 pub async fn run(socket_address: SocketAddr) -> Result<(), Box<dyn Error>> {
     let app = Router::new().route("/", routing::get(root_handler));
 
